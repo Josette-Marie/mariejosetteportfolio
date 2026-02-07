@@ -15,6 +15,44 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     });
 });
 
+// Dark Mode Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = themeToggle?.querySelector('i');
+
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', currentTheme);
+
+// Update icon based on current theme
+if (themeIcon) {
+    themeIcon.className = currentTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+}
+
+themeToggle?.addEventListener('click', () => {
+    let theme = document.documentElement.getAttribute('data-theme');
+    
+    if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        if (themeIcon) themeIcon.className = 'fas fa-sun';
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        if (themeIcon) themeIcon.className = 'fas fa-moon';
+    }
+});
+
+// Language Selector
+const languageSelector = document.getElementById('language-selector');
+languageSelector?.addEventListener('change', (e) => {
+    changeLanguage(e.target.value);
+});
+
+// Initialize language on page load
+document.addEventListener('DOMContentLoaded', () => {
+    initLanguage();
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

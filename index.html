@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mbungai Marie Josette Leinyuy - Leinyuy The Poet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title data-i18n="page-title">Mbungai Marie Josette Leinyuy - Leinyuy The Poet</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -16,16 +16,25 @@
                 <h2><span class="brand-name">M</span> <span class="brand-title">M.J.L</span></h2>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#bio">Bio</a></li>
-                <li><a href="#tutoring">Tutoring</a></li>
-                <li><a href="#awards">Awards</a></li>
-                <li><a href="#poetry">Poetry</a></li>
-                <li><a href="#volunteering">Volunteering</a></li>
-                <li><a href="#tech">Tech Solutions</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="#home" data-i18n="nav-home">Home</a></li>
+                <li><a href="#bio" data-i18n="nav-bio">Bio</a></li>
+                <li><a href="#tutoring" data-i18n="nav-tutoring">Tutoring</a></li>
+                <li><a href="#awards" data-i18n="nav-awards">Awards</a></li>
+                <li><a href="#poetry" data-i18n="nav-poetry">Poetry</a></li>
+                <li><a href="#volunteering" data-i18n="nav-volunteering">Volunteering</a></li>
+                <li><a href="#tech" data-i18n="nav-tech">Tech Solutions</a></li>
+                <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
+                <li><a href="gallery.html" data-i18n="nav-gallery">Gallery</a></li>
             </ul>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <select id="language-selector" class="language-selector" aria-label="Select language">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                </select>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -539,5 +548,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="translations.js"></script>
 </body>
 </html>
