@@ -54,6 +54,7 @@
     width: 100%;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     background: var(--bg-secondary);
+    min-height: 300px;
 }
 
 .video-wrapper iframe {
@@ -63,6 +64,56 @@
     width: 100%;
     height: 100%;
     border: none;
+}
+
+.video-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-crimson) 0%, #5a1629 100%);
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.video-link {
+    display: block;
+    text-decoration: none;
+}
+
+.video-link:hover .video-placeholder {
+    background: linear-gradient(135deg, #5a1629 0%, var(--primary-crimson) 100%);
+}
+
+.video-placeholder i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-orange);
+    transition: transform 0.3s ease;
+}
+
+.video-link:hover .video-placeholder i {
+    transform: scale(1.2);
+}
+
+.video-placeholder p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: white;
+}
+
+.section-note {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    font-style: italic;
 }
 
 .gallery-caption {
@@ -76,9 +127,42 @@
     font-size: 1.2rem;
 }
 
-.gallery-caption p {
+.performance-description {
     color: var(--text-light);
     font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.performance-details {
+    border-top: 1px solid var(--primary-crimson);
+    padding-top: 1rem;
+    margin-top: 1rem;
+}
+
+.performance-details p {
+    color: var(--text-dark);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.performance-details i {
+    color: var(--secondary-orange);
+    font-size: 0.9rem;
+    min-width: 16px;
+}
+
+.performance-details strong {
+    color: var(--primary-crimson);
+}
+
+.event-name,
+.event-location,
+.event-date {
+    line-height: 1.6;
 }
 
 .placeholder-item {
